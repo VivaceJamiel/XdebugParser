@@ -1,0 +1,33 @@
+TRACE START [2021-08-04 15:15:30.531501]
+                           => $str = 'Xdebug' /var/www/html/index.php:5
+    0.0064     398440     -> str_split($str = 'Xdebug') /var/www/html/index.php:11
+    0.0066     399040      >=> [0 => 'X', 1 => 'd', 2 => 'e', 3 => 'b', 4 => 'u', 5 => 'g']
+    0.0068     399120     -> ret_ord($c = 'X') /var/www/html/index.php:13
+    0.0069     399120       -> ord($character = 'X') /var/www/html/index.php:8
+    0.0071     399160        >=> 88
+    0.0073     399120      >=> 88
+    0.0075     399120     -> ret_ord($c = 'd') /var/www/html/index.php:13
+    0.0077     399120       -> ord($character = 'd') /var/www/html/index.php:8
+    0.0078     399160        >=> 100
+    0.0080     399120      >=> 100
+    0.0082     399120     -> ret_ord($c = 'e') /var/www/html/index.php:13
+    0.0085     399120       -> ord($character = 'e') /var/www/html/index.php:8
+    0.0087     399160        >=> 101
+    0.0088     399120      >=> 101
+    0.0090     399120     -> ret_ord($c = 'b') /var/www/html/index.php:13
+    0.0091     399120       -> ord($character = 'b') /var/www/html/index.php:8
+    0.0093     399160        >=> 98
+    0.0095     399120      >=> 98
+    0.0098     399120     -> ret_ord($c = 'u') /var/www/html/index.php:13
+    0.0099     399120       -> ord($character = 'u') /var/www/html/index.php:8
+    0.0100     399160        >=> 117
+    0.0103     399120      >=> 117
+    0.0105     399120     -> ret_ord($c = 'g') /var/www/html/index.php:13
+    0.0106     399120       -> ord($character = 'g') /var/www/html/index.php:8
+    0.0109     399160        >=> 103
+    0.0110     399120      >=> 103
+    0.0112     398584     -> phpinfo() /var/www/html/index.php:16
+    0.0137     398712      >=> TRUE
+    0.0139     325968
+TRACE END   [2021-08-04 15:15:30.539696]
+
