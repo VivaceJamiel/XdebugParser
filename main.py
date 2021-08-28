@@ -1,30 +1,20 @@
+import re
+import argparse
 import json
 
-while True:
-    file = input("Enter the filename\n")
-    print("\nOpening " + file + '...\n')
-    try:
-        f = open(file,'r',encoding='ISO-8859-1')
-        break
-    except IOError:
-        input("Error in file opening, please type correct filename\n")
+REGEX = '[a-zA-Z0-9-_/.]*.php:[0-9]{2,4}'
 
-lineDict = {}
+def get_file_lines(filepath):
+    with open(filepath,'r',encoding='ISO-8859-1') as file:
+        content = file.read()
+    return re.findall(REGEX, content)
 
-for line in f:
-    splitted = line.split()
-    for word in splitted:
-        if '.php:' in word:
-            # print(word)
-            combo = word.split(":")
-            # print(combo)
-            lineNum = combo[1]
-            fileName = combo[0]
-            lineDict[lineNum] = fileName
 
-with open('lineDict.txt', 'w') as file:
-    file.write(json.dumps(lineDict))
-
-print('Finished')
-
-f.close()
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filepath', help='Xdebug file path')
+    parser.add_argument('output', help='output file')
+    args = parser.parse_args()
+    result = get_file_lines(args.filepath)
+    with open(args.output, 'w+') as file:
+        json.dump(result, file)
