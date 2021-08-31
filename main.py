@@ -17,4 +17,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     result = get_file_lines(args.filepath)
     with open(args.output, 'w+') as file:
-        json.dump(result, file)
+        json.dump(result, file, indent=4)
